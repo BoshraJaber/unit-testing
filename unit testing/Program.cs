@@ -31,7 +31,7 @@ namespace ATM
 
                 if(userInput == "1")
                 {
-                    //Console.WriteLine(ViewBalance());
+                    Console.WriteLine(ViewBalance());
                 }
                 else if(userInput == "3")
                 {
@@ -56,6 +56,11 @@ namespace ATM
                 }
 
             }
+           
+        }
+        static public decimal ViewBalance()
+        {
+            return Balance;
         }
     }
 }
