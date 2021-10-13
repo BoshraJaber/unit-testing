@@ -2,7 +2,7 @@
 
 namespace ATM
 {
-    class Program
+   public class Program
     {
         // Global variable 
         static public decimal Balance = 0;
