@@ -47,20 +47,41 @@ namespace ATM
                 }
                 else if(userInput == "4")
                 {
-                    Console.WriteLine("Thank you");
+                    Console.WriteLine($"Thank you {userName}, Have a nice day");
                     showInterface = false;
                 }
                 else
                 {
-                    Console.WriteLine("Invalid choice");
+                    Console.WriteLine("Kindly choose one of the numbers from 1 to 4");
                 }
 
             }
            
         }
+        // View Balance
         static public decimal ViewBalance()
         {
             return Balance;
         }
+        // Deposite:
+        static public string Deposit(decimal deposite)
+        {
+            try
+            {
+                if (deposite <= 0)
+                {
+
+                    throw new Exception("Invalid Number, please enter a valid number");
+                }
+
+                Balance += deposite;
+                return "Task completed successfully";
+            }
+            catch (Exception e)
+            {
+                return e.Message;
+            }
+        }
+
     }
 }
