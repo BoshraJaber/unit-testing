@@ -37,13 +37,13 @@ namespace ATM
                 {
                     Console.Write("Please enter amount of money > ");
                     string money = Console.ReadLine();
-                    //Console.WriteLine(Withdraw(Convert.ToDecimal(money)));
+                    Console.WriteLine(Withdraw(Convert.ToDecimal(money)));
                 }
                 else if (userInput == "2")
                 {
                     Console.Write("Please enter amount of money > ");
                     string money = Console.ReadLine();
-                 //   Console.WriteLine(Deposit(Convert.ToDecimal(money)));
+                    Console.WriteLine(Deposit(Convert.ToDecimal(money)));
                 }
                 else if(userInput == "4")
                 {
@@ -82,6 +82,32 @@ namespace ATM
                 return e.Message;
             }
         }
+        // withdraw;
+        static public string Withdraw(decimal withdraw)
+        {
+            try
+            {
+
+                if (withdraw > Balance)
+                {
+                    throw new Exception($"{withdraw} is greater than what you have, your balance {Balance}");
+                }
+
+                if (withdraw <= 0)
+                {
+
+                    throw new Exception("Invalid Number, Please enter a number above 0");
+                }
+
+                Balance -= withdraw;
+                return "Task Completed Successfully";
+            }
+            catch (Exception e)
+            {
+                return e.Message;
+            }
+        }
+
 
     }
 }
